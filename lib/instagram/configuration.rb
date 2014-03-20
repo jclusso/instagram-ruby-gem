@@ -26,7 +26,11 @@ module Instagram
     # The adapter that will be used to connect if none is set
     #
     # @note The default faraday adapter is Net::HTTP.
-    DEFAULT_ADAPTER = Faraday.default_adapter
+    # DEFAULT_ADAPTER = Faraday.default_adapter
+
+    # To make the API not tie up requests we are going to use em_http instead from
+    # this guide https://coderwall.com/p/5cafjw 
+    DEFAULT_ADAPTER = :em_http
 
     # By default, don't set an application ID
     DEFAULT_CLIENT_ID = nil
